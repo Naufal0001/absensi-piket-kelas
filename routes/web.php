@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Jadwal;
+use App\Models\Siswa;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/try', function(){
+    return view('CheckDatabase', 
+        [
+            "Students" => Siswa::all(),
+            "Shedulles" => Jadwal::all()
+        ]
+    );
 });

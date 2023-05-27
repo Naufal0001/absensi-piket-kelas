@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class rekap extends Model
 {
     use HasFactory;
+
+    public function SiswaRecapt(){
+        return $this->belongsTo(Siswa::class, 'id_siswa');
+    }
 }

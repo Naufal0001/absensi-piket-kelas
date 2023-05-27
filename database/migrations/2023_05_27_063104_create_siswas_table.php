@@ -16,6 +16,7 @@ return new class extends Migration
             $table->char('nis', 12);
             $table->foreignId("id_jadwal");
             $table->string('nama');
+            $table->enum("jenis_kelamin", ['Laki Laki', 'Perempuan']);
             $table->timestamps();
         });
     }

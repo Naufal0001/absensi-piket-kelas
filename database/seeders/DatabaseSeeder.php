@@ -40,6 +40,7 @@ class DatabaseSeeder extends Seeder
             'nama' => 'murdog',
             'nis' => 681239168,
             'id_jadwal' => Jadwal::first()->id,
+            'jenis_kelamin' => "Laki Laki"
         ]);
 
     }
