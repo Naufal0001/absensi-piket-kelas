@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Jadwal;
+use App\Models\Siswa;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +21,26 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        Jadwal::create([
+            'hari' => 'senin',
+        ]);
+        Jadwal::create([
+            'hari' => 'selasa',
+        ]);
+        Jadwal::create([
+            'hari' => 'rabu',
+        ]);
+        Jadwal::create([
+            'hari' => 'kamis',
+        ]);
+        Jadwal::create([
+            'hari' => 'jumat',
+        ]);
+        Siswa::create([
+            'nama' => 'murdog',
+            'nis' => 681239168,
+            'id_jadwal' => Jadwal::first()->id,
+        ]);
+
     }
 }
