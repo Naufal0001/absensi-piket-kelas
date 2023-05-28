@@ -24,7 +24,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/absensi-siswa"
+                        <a href="/data"
                             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                             <svg aria-hidden="true"
                                 class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -32,23 +32,30 @@
                                 <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
                                     clip-rule="evenodd"></path>
                             </svg>
-                            <span class="flex-1 ml-3 whitespace-nowrap">Absensi Siswa</span>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Data Siswa</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <svg aria-hidden="true"
-                                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
-                                </path>
-                            </svg>
-                            <span class="flex-1 ml-3 whitespace-nowrap">Kanban</span>
+                        <button type="button" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example"
+                        class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                        
+                        <div class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
+                            <i class="fa-solid fa-pen"></i>
+                        </div>
+                        
+                            <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Form</span>
+                            <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
 
-                        </a>
+                        </button>
+                        <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                            <li>
+                               <a href="/form-siswa" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Form Siswa</a>
+                            </li>
+                            <li>
+                               <a href="/form-absensi" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Form Absensi</a>
+                      </ul>
                     </li>
+                    
                     <li>
                         <a href="#"
                             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">

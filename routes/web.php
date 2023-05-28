@@ -23,8 +23,20 @@ Route::get('/dashboard', function () {
     return view('home');
 });
 
-Route::get('/absensi-siswa', function () {
-    return view('absensi-siswa');
+Route::get('/data', function () {
+    return view('data-siswa');
+});
+
+Route::get('/jadwal-piket', function () {
+    return view('jadwal');
+});
+
+Route::get('/form-siswa', function () {
+    return view('form-siswa');
+});
+
+Route::get('/form-absensi', function () {
+    return view('form-absensi');
 });
 
 
