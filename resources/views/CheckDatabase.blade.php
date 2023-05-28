@@ -10,10 +10,10 @@
     <h1>Jadwal</h1>
     <div>
         @foreach ($Shedulles as $Shedulle)
-            <h1>{{ $Shedulle->hari }}</h1>
             <ul>
+                <h1>{{ ucwords($Shedulle->hari) }}</h1>
                 @foreach ($Shedulle->Siswa as $item)
-                <li>{{ $item->nama }}</li>
+                <li>{{ ucwords($item->nama) }}</li>
                 @endforeach
             </ul>
         @endforeach
