@@ -43,7 +43,8 @@ class ShedullesController extends Controller
                 $hari = false;
                 break;
         }
-        dd(Jadwal::where('hari', $hari)->first());
+        // dd(Jadwal::where('hari', $hari)->first());
+        return view("cobaA");
     }
 
     /**
@@ -59,7 +60,7 @@ class ShedullesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**
