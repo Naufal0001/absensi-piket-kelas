@@ -20,6 +20,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('home');
+});
+
+Route::get('/absensi-siswa', function () {
+    return view('absensi-siswa');
+});
+
+
+
 Route::get('/try', function(){
     return view('CheckDatabase', 
         [
