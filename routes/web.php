@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ShedullesController;
 use App\Models\Jadwal;
 use App\Models\Siswa;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,7 @@ Route::get('/try', function(){
         ]
     );
 });
+
+
+
+Route::resource('/asd', ShedullesController::class);

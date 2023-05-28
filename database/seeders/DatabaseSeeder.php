@@ -22,19 +22,25 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         Jadwal::create([
-            'hari' => 'senin',
+            'hari' => 'Senin',
         ]);
         Jadwal::create([
-            'hari' => 'selasa',
+            'hari' => 'Selasa',
         ]);
         Jadwal::create([
-            'hari' => 'rabu',
+            'hari' => 'Rabu',
         ]);
         Jadwal::create([
-            'hari' => 'kamis',
+            'hari' => 'Kamis',
         ]);
         Jadwal::create([
-            'hari' => 'jumat',
+            'hari' => 'Jumat',
+        ]);
+        Jadwal::create([
+            'hari' => 'Sabtu',
+        ]);
+        Jadwal::create([
+            'hari' => 'Minggu',
         ]);
         Siswa::create([
             'nama' => 'murdog',
