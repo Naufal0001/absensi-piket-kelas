@@ -27,9 +27,9 @@
                 <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel"
                     aria-labelledby="profile-tab">
 
-                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <div class="relative overflow-x-auto shadow-md rounded-lg">
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <thead class="text-white uppercase bg-blue-500">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">No</th>
                                     <th scope="col" class="px-6 py-3">NIS</th>
@@ -50,7 +50,9 @@
                                     <td class="px-6 py-4">Pria</td>
                                     <td class="px-6 py-4">Tidak Piket</td>
                                     <td class="px-6 py-4">izin mabal</td>
-                                    <td class="px-6 py-4">Detail</td>
+                                    <td class="px-6 py-4">
+                                        <a href="/data/nama-siswa" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700">Detail</a>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -61,7 +63,7 @@
                     aria-labelledby="dashboard-tab">
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <thead class="text-white uppercase bg-blue-500">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">No</th>
                                     <th scope="col" class="px-6 py-3">NIS</th>
@@ -70,7 +72,6 @@
                                     <th scope="col" class="px-6 py-3">JK</th>
                                     <th scope="col" class="px-6 py-3">Keterangan</th>
                                     <th scope="col" class="px-6 py-3">Alasan</th>
-                                    <th scope="col" class="px-6 py-3">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody class="">
@@ -82,7 +83,6 @@
                                     <td class="px-6 py-4">Pria</td>
                                     <td class="px-6 py-4">Tidak Piket</td>
                                     <td class="px-6 py-4">izin mabal</td>
-                                    <td class="px-6 py-4">Detail</td>
                                 </tr>
                             </tbody>
                         </table>

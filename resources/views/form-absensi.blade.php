@@ -6,15 +6,16 @@
             <div class="text-4xl font-bold text-gray-700">
                 Form Absensi
             </div>
-            <div class="border mt-4">
-                <div class="bg-gray-200 p-4 rounded-lg">
+            <div class="border rounded-lg mt-4">
+                <div class="bg-gray-200 rounded-t-lg p-4">
                     Absensi Tanggal 28 Mei 2023
                 </div>
                 <form action="" id="">
                     @csrf
-                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <div class="relative overflow-x-auto shadow-md rounded-b-lg">
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <thead
+                                class="border text-white uppercase bg-blue-500 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">No</th>
                                     <th scope="col" class="px-6 py-3">NIS</th>

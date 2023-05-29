@@ -1,6 +1,6 @@
 <div class="z-10 w-full">
 
-    <nav class="bg-emerald-500 border-gray-200 dark:bg-gray-900 sm:ml-64">
+    <nav class="bg-gray-100 border-gray-200 dark:bg-gray-900 sm:ml-64 shadow-lg">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <div>
                 <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar"
@@ -16,14 +16,14 @@
                 </button>
             </div>
             <div class="flex items-center md:order-2">
-              <div class="sm:flex sm:text-center sm:bg-green-400 sm:py-1 sm:px-3 sm:rounded-full cursor-pointer" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
+              <div class="sm:flex sm:text-center sm:bg-gray-300 sm:p-2 sm:rounded-full cursor-pointer" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
               data-dropdown-placement="bottom">
                 <button type="button"
                     class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 sm:ring-0 sm:focus:ring-0 dark:focus:ring-gray-600"
                     id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                     data-dropdown-placement="bottom">
                     <span class="sr-only">Open user menu</span>
-                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo">
+                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="">
                 </button>
                 <div class="font-bold self-center sm:ml-2 sm:block hidden">
                   John smith

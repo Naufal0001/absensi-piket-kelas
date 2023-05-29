@@ -40,6 +40,9 @@ Route::get('/form-absensi', function () {
     return view('form-absensi');
 });
 
+Route::get('/jadwal-piket', function () {
+    return view('jadwal');
+});
 
 
 Route::get('/try', function(){

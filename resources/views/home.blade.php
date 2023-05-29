@@ -10,7 +10,7 @@
                 <div class="flex flex-col bg-sky-400 border rounded-lg shadow-lg p-6">
                     <div class="flex">
                         <div class="flex flex-col gap-4 w-[100%]">
-                            <span class="text-7xl text-white font-bold">
+                            <span class="text-6xl text-white font-bold">
                                 20 
                             </span>
                             <span class="text-2xl font-semibold text-white uppercase">
@@ -32,7 +32,7 @@
                 <div class="flex flex-col bg-yellow-200 border rounded-lg shadow-lg p-6">
                     <div class="flex">
                         <div class="flex flex-col gap-4 w-[100%]">
-                            <span class="text-6xl text-white font-bold uppercase">
+                            <span class="text-5xl text-white font-bold uppercase">
                                 Rabu
                             </span>
                             <span class="text-2xl font-semibold text-white uppercase">
@@ -54,7 +54,7 @@
                 <div class="flex flex-col bg-red-400 border rounded-lg shadow-lg p-6">
                     <div class="flex">
                         <div class="flex flex-col gap-4 w-[100%]">
-                            <span class="text-7xl text-white font-bold">
+                            <span class="text-6xl text-white font-bold">
                                 20 
                             </span>
                             <span class="text-2xl font-semibold text-white uppercase">
