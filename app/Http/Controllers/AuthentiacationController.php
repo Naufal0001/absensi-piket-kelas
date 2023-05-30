@@ -16,7 +16,7 @@ class AuthentiacationController extends Controller
         return view('Login', ["title" => "Login"]);
     }
 
-    public function LoginAuth(Request $request){
+    public function Login(Request $request){
         $user = $request->validate([
             'email' => "email|required",
             'password' => "required|min:3"
@@ -25,7 +25,7 @@ class AuthentiacationController extends Controller
         if(Auth::attempt($user)){
             $request->session()->regenerate();
  
-            return redirect()->intended('dashboard');
+            return redirect('/dashboard');
         }
 
         return back()->withErrors([
@@ -79,9 +79,15 @@ class AuthentiacationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function Logout(Request $request)
     {
-        //
+        Auth::logout();
+ 
+        $request->session()->invalidate();
+    
+        $request->session()->regenerateToken();
+    
+        return redirect('/');
     }
 
     /**

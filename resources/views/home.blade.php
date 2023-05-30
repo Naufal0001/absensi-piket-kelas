@@ -11,10 +11,10 @@
                     <div class="flex">
                         <div class="flex flex-col gap-4 w-[100%]">
                             <span class="text-6xl text-white font-bold">
-                                20 
+                                {{ $students }}
                             </span>
                             <span class="text-2xl font-semibold text-white uppercase">
-                                Siswa piket hari ini
+                                Jumlah Siswa
                             </span>
                         </div>
                         <div class="w-[70%] grid justify-items-end">

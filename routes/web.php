@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\AuthentiacationController;
+use App\Http\Controllers\MainController;
 use App\Models\Siswa;
 use App\Models\Jadwal;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShedullesController;
+use App\Http\Middleware\Authenticate;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,33 +19,22 @@ use App\Http\Controllers\ShedullesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::group(["middleware" => "guest"], function(){
+    Route::get('/', function () {
+        return view('welcome');
+    })->name('login');
+    Route::post('/login', [AuthentiacationController::class, "Login"]);
 });
 
-Route::get('/dashboard', function () {
-    return view('home');
+Route::group(["middleware" => "auth"], function (){
+    Route::get('/dashboard', [MainController::class, "Dashboard"])->name('home');
+    Route::get('/data', [MainController::class, "Data"]);
+    Route::get('/jadwal-piket', [MainController::class, "Shedulles"]);
+    Route::resource('/form-absensi', ShedullesController::class);
+    Route::get('/logout', [AuthentiacationController::class, 'Logout']);
 });
 
-Route::get('/data', function () {
-    return view('data-siswa');
-});
-
-Route::get('/jadwal-piket', function () {
-    return view('jadwal');
-});
-
-Route::get('/form-siswa', function () {
-    return view('form-siswa');
-});
-
-Route::get('/form-absensi', function () {
-    return view('form-absensi');
-});
-
-Route::get('/jadwal-piket', function () {
-    return view('jadwal');
-});
 
 
 Route::get('/try', function(){
@@ -54,5 +46,3 @@ Route::get('/try', function(){
     );
 });
 
-
-Route::resource('/asd', ShedullesController::class);

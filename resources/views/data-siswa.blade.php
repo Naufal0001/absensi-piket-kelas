@@ -34,26 +34,24 @@
                                     <th scope="col" class="px-6 py-3">No</th>
                                     <th scope="col" class="px-6 py-3">NIS</th>
                                     <th scope="col" class="px-6 py-3">Nama</th>
-                                    <th scope="col" class="px-6 py-3">Kelas</th>
                                     <th scope="col" class="px-6 py-3">JK</th>
-                                    <th scope="col" class="px-6 py-3">Keterangan</th>
-                                    <th scope="col" class="px-6 py-3">Alasan</th>
+                                    <th scope="col" class="px-6 py-3">Jadwal Piket</th>
                                     <th scope="col" class="px-6 py-3">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody class="">
+                                @foreach ($students as $student)
                                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                    <td class="px-6 py-4">1</td>
-                                    <td class="px-6 py-4">12986</td>
-                                    <td class="px-6 py-4">Lorem</td>
-                                    <td class="px-6 py-4">XXX</td>
-                                    <td class="px-6 py-4">Pria</td>
-                                    <td class="px-6 py-4">Tidak Piket</td>
-                                    <td class="px-6 py-4">izin mabal</td>
+                                    <td class="px-6 py-4">{{ $loop->iteration }}</td>
+                                    <td class="px-6 py-4">{{ $student->nis }}</td>
+                                    <td class="px-6 py-4">{{ $student->nama }}</td>
+                                    <td class="px-6 py-4">{{ $student->jenis_kelamin }}</td>
+                                    <td class="px-6 py-4">{{ $student->Jadwal->hari }}</td>
                                     <td class="px-6 py-4">
                                         <a href="/data/nama-siswa" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700">Detail</a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

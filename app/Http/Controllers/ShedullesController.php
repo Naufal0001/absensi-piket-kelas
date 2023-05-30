@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jadwal;
+use App\Models\rekap;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ShedullesController extends Controller
 {
@@ -18,9 +20,6 @@ class ShedullesController extends Controller
     public function index()
     {
         switch (strtolower(date("D"))) {
-            case 'sun':
-                $hari = "Minggu";
-                break;
             case 'mon':
                 $hari = "Senin";
                 break;
@@ -36,15 +35,13 @@ class ShedullesController extends Controller
             case 'fri':
                 $hari = "Jumat";
                 break;
-            case 'sat':
-                $hari = "Sabtu";
-                break;
             default:
-                $hari = false;
+                $hari = null;
                 break;
         }
-        // dd(Jadwal::where('hari', $hari)->first());
-        return view("cobaA");
+        $data['shedulles'] = Jadwal::where("hari", $hari)->first();
+
+        return view("form-absensi", $data);
     }
 
     /**
@@ -60,7 +57,22 @@ class ShedullesController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $requestData = $request->all();
+
+        DB::transaction(function () use ($requestData) {
+            foreach ($requestData['id'] as $index => $itemId) {
+                $record = [
+                    "id_siswa"   => $itemId,
+                    "tanggal"    => date("Y-m-d"),
+                    "alasan"     => $requestData['alasan'][$index],
+                    "keterangan" => $requestData['keterangan'][$index]
+                ];
+
+                rekap::create($record);
+            }
+        });
+
+        return back();
     }
 
     /**

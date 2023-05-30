@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_siswa');
             $table->date('tanggal');
-            $table->text('alasan');
+            $table->text('alasan')->nullable();
             $table->enum("keterangan",['Piket', 'Tidak Piket']);
             $table->timestamps();
         });

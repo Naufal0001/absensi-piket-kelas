@@ -23,25 +23,15 @@
                         aria-labelledby="profile-tab">
                         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                <thead class="border text-white uppercase bg-blue-500">
-                                    <tr>
-                                        <th scope="col" class="px-6 py-3">Senin</th>
-                                        <th scope="col" class="px-6 py-3">Selasa</th>
-                                        <th scope="col" class="px-6 py-3">Rabu</th>
-                                        <th scope="col" class="px-6 py-3">Kamis</th>
-                                        <th scope="col" class="px-6 py-3">Jumat</th>
-                                    </tr>
-                                </thead>
                                 <tbody class="">
-                                    @for ($i = 0; $i <= 6; $i++)
+                                    @foreach ($shedulles as $shedulle)
                                     <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                        <td class="px-6 py-4">Rehan</td>
-                                        <td class="px-6 py-4">Rehan</td>
-                                        <td class="px-6 py-4">Rehan</td>
-                                        <td class="px-6 py-4">Rehan</td>
-                                        <td class="px-6 py-4">Rehan</td>
+                                        <td class="text-center font-semibold border-0 text-white uppercase bg-blue-500">{{ $shedulle->hari }}</td>
+                                        @foreach ($shedulle->Siswa as $students)
+                                            <td class="px-6 py-4">{{ $students->nama }}</td>
+                                        @endforeach
                                     </tr>
-                                    @endfor
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
