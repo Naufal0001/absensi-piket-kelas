@@ -6,7 +6,6 @@ use App\Models\Siswa;
 use App\Models\Jadwal;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShedullesController;
-use App\Http\Middleware\Authenticate;
 
 /*
 |--------------------------------------------------------------------------
