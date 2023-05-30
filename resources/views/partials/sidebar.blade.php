@@ -48,10 +48,10 @@
                         </button>
                         <ul id="dropdown-example" class="hidden mt-2 bg-white rounded-lg">
                             <li>
-                               <a href="/form-siswa" class="flex items-center w-full p-2 hover:bg-black rounded-t-lg pl-11 text-black hover:text-white">Form Siswa</a>
+                               <a href="/form-siswa" class="flex items-center w-full p-2 hover:bg-blue-700 rounded-t-lg pl-11 text-black hover:text-white">Form Siswa</a>
                             </li>
                             <li>
-                               <a href="/form-absensi" class="flex items-center w-full p-2 hover:bg-black rounded-b-lg pl-11 text-black hover:text-white">Form Absensi</a>
+                               <a href="/form-absensi" class="flex items-center w-full p-2 hover:bg-blue-700 rounded-b-lg pl-11 text-black hover:text-white">Form Absensi</a>
                       </ul>
                     </li>
                     

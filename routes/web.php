@@ -4,6 +4,7 @@ use App\Models\Siswa;
 use App\Models\Jadwal;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShedullesController;
+use App\Http\Controllers\AuthentiacationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,8 @@ use App\Http\Controllers\ShedullesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login', function () {
+    return view('login');
 });
 
 Route::get('/dashboard', function () {
