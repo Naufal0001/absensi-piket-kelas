@@ -6,8 +6,7 @@
             <div class="text-4xl font-bold text-gray-700">
                 Jadwal Piket
             </div>
-            <div>
-
+            <div class="border shadow-md rounded-md bg-slate-50 mt-4">
                 <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
                     <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab"
                         data-tabs-toggle="#myTabContent" role="tablist">
@@ -25,12 +24,15 @@
                             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                 <tbody class="">
                                     @foreach ($shedulles as $shedulle)
-                                    <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                        <td class="text-center font-semibold border-0 text-white uppercase bg-blue-500">{{ $shedulle->hari }}</td>
-                                        @foreach ($shedulle->Siswa as $students)
-                                            <td class="px-6 py-4">{{ $students->nama }}</td>
-                                        @endforeach
-                                    </tr>
+                                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                                            <td class="text-center font-semibold border-0 text-white uppercase bg-blue-500">
+                                                {{ $shedulle->hari }}</td>
+                                            @foreach ($shedulle->Siswa as $students)
+                                                <td class="px-6 py-4">
+                                                    <div class="">{{ $students->nama }}</div>
+                                                </td>
+                                            @endforeach
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>
@@ -38,8 +40,8 @@
                     </div>
                 </div>
 
-                </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection

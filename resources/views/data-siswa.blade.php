@@ -17,7 +17,7 @@
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
-                                class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                                class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600hover:border-gray-300 dark:hover:text-gray-300"
                                 id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab"
                                 aria-controls="dashboard" aria-selected="false">Riwayat</button>
                         </li>
@@ -27,38 +27,42 @@
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel"
                         aria-labelledby="profile-tab">
 
-                    <div class="relative overflow-x-auto shadow-md rounded-lg">
-                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead class="text-white uppercase bg-blue-500">
-                                <tr>
-                                    <th scope="col" class="px-6 py-3">No</th>
-                                    <th scope="col" class="px-6 py-3">NIS</th>
-                                    <th scope="col" class="px-6 py-3">Nama</th>
-                                    <th scope="col" class="px-6 py-3">JK</th>
-                                    <th scope="col" class="px-6 py-3">Jadwal Piket</th>
-                                    <th scope="col" class="px-6 py-3">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody class="">
-                                @foreach ($students as $student)
-                                <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                    <td class="px-6 py-4">{{ $loop->iteration }}</td>
-                                    <td class="px-6 py-4">{{ $student->nis }}</td>
-                                    <td class="px-6 py-4">{{ $student->nama }}</td>
-                                    <td class="px-6 py-4">{{ $student->jenis_kelamin }}</td>
-                                    <td class="px-6 py-4">{{ $student->Jadwal->hari }}</td>
-                                    <td class="px-6 py-4">
-                                        <a href="/data/nama-siswa" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700">Detail</a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                        <div class="relative overflow-x-auto shadow-md rounded-lg">
+                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                <thead class="text-white uppercase bg-blue-500">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3">No</th>
+                                        <th scope="col" class="px-6 py-3">NIS</th>
+                                        <th scope="col" class="px-6 py-3">Nama</th>
+                                        <th scope="col" class="px-6 py-3">JK</th>
+                                        <th scope="col" class="px-6 py-3">Jadwal Piket</th>
+                                        <th scope="col" colspan="2" class="text-center px-6 py-3">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="">
+                                    @foreach ($students as $student)
+                                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                                            <td class="px-6 py-4">{{ $loop->iteration }}</td>
+                                            <td class="px-6 py-4">{{ $student->nis }}</td>
+                                            <td class="px-6 py-4">{{ $student->nama }}</td>
+                                            <td class="px-6 py-4">{{ $student->jenis_kelamin }}</td>
+                                            <td class="px-6 py-4">{{ $student->Jadwal->hari }}</td>
+                                            <td class="px-6 py-4">
+                                                <a href="/data/edit/{{ $student['id'] }}"
+                                                    class="focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700">Edit</a>
+                                            </td>
+                                            <td>
+                                                <a href="/data/hapus/{{ $student['id'] }}"
+                                                    class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Hapus</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
 
                     </div>
-                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel"
-                        aria-labelledby="dashboard-tab">
+                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel">
                         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                 <thead class="text-white uppercase bg-blue-500">
@@ -66,30 +70,33 @@
                                         <th scope="col" class="px-6 py-3">No</th>
                                         <th scope="col" class="px-6 py-3">NIS</th>
                                         <th scope="col" class="px-6 py-3">Nama</th>
-                                        <th scope="col" class="px-6 py-3">Kelas</th>
                                         <th scope="col" class="px-6 py-3">JK</th>
+                                        <th scope="col" class="px-6 py-3">Tanggal</th>
                                         <th scope="col" class="px-6 py-3">Keterangan</th>
                                         <th scope="col" class="px-6 py-3">Alasan</th>
                                     </tr>
                                 </thead>
                                 <tbody class="">
+                                    @foreach ($rekaps as $rekap)
                                     <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                        <td class="px-6 py-4">1</td>
-                                        <td class="px-6 py-4">12986</td>
-                                        <td class="px-6 py-4">Lorem</td>
-                                        <td class="px-6 py-4">XXX</td>
-                                        <td class="px-6 py-4">Pria</td>
-                                        <td class="px-6 py-4">Tidak Piket</td>
-                                        <td class="px-6 py-4">izin mabal</td>
+                                        <td class="px-6 py-4">{{ $loop->iteration }}</td>
+                                        <td class="px-6 py-4">{{ $student->nis }}</td>
+                                        <td class="px-6 py-4">{{ $student->nama }}</td>
+                                        <td class="px-6 py-4">{{ $student->jenis_kelamin }}</td>
+                                        <td class="px-6 py-4">{{ $rekap->tanggal }}</td>
+                                        <td class="px-6 py-4">{{ $rekap->keterangan }}</td>
+                                        <td class="px-6 py-4">{{ $rekap->alasan }}</td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
-
                 </div>
 
             </div>
+
         </div>
+    </div>
     </div>
 @endsection

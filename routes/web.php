@@ -6,6 +6,7 @@ use App\Models\Siswa;
 use App\Models\Jadwal;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShedullesController;
+use App\Http\Controllers\SiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,10 @@ Route::group(["middleware" => "auth"], function (){
     Route::get('/data', [MainController::class, "Data"]);
     Route::get('/jadwal-piket', [MainController::class, "Shedulles"]);
     Route::resource('/form-absensi', ShedullesController::class);
+    Route::resource('/form-siswa', SiswaController::class);
+    Route::get('/data/edit/{id}', [SiswaController::class, 'edit']);
+    Route::post('/data/edit/{id}', [SiswaController::class, 'update']);
+    Route::get('/data/hapus/{id}', [SiswaController::class, 'destroy']);
     Route::get('/logout', [AuthentiacationController::class, 'Logout']);
 });
 
