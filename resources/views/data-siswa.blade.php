@@ -34,7 +34,7 @@
                                         <th scope="col" class="px-6 py-3">No</th>
                                         <th scope="col" class="px-6 py-3">NIS</th>
                                         <th scope="col" class="px-6 py-3">Nama</th>
-                                        <th scope="col" class="px-6 py-3">JK</th>
+                                        <th scope="col" class="px-6 py-3">Jenis Kelamin</th>
                                         <th scope="col" class="px-6 py-3">Jadwal Piket</th>
                                         <th scope="col" colspan="2" class="text-center px-6 py-3">Aksi</th>
                                     </tr>
@@ -63,30 +63,32 @@
 
                     </div>
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel">
-                        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                        <div class="relative overflow-x-auto shadow-md rounded-lg">
                             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                 <thead class="text-white uppercase bg-blue-500">
                                     <tr>
                                         <th scope="col" class="px-6 py-3">No</th>
                                         <th scope="col" class="px-6 py-3">NIS</th>
                                         <th scope="col" class="px-6 py-3">Nama</th>
-                                        <th scope="col" class="px-6 py-3">JK</th>
+                                        <th scope="col" class="px-6 py-3">Jenis Kelamin</th>
                                         <th scope="col" class="px-6 py-3">Tanggal</th>
                                         <th scope="col" class="px-6 py-3">Keterangan</th>
                                         <th scope="col" class="px-6 py-3">Alasan</th>
                                     </tr>
                                 </thead>
                                 <tbody class="">
-                                    @foreach ($rekaps as $rekap)
-                                    <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                        <td class="px-6 py-4">{{ $loop->iteration }}</td>
-                                        <td class="px-6 py-4">{{ $student->nis }}</td>
-                                        <td class="px-6 py-4">{{ $student->nama }}</td>
-                                        <td class="px-6 py-4">{{ $student->jenis_kelamin }}</td>
-                                        <td class="px-6 py-4">{{ $rekap->tanggal }}</td>
-                                        <td class="px-6 py-4">{{ $rekap->keterangan }}</td>
-                                        <td class="px-6 py-4">{{ $rekap->alasan }}</td>
-                                    </tr>
+                                    @foreach ($students as $student)
+                                        @foreach ($student->Recapt as $rekap)
+                                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                                                <td class="px-6 py-4">{{ $loop->iteration }}</td>
+                                                <td class="px-6 py-4">{{ $rekap->SiswaRecapt->nis }}</td>
+                                                <td class="px-6 py-4">{{ $rekap->SiswaRecapt->nama }}</td>
+                                                <td class="px-6 py-4">{{ $rekap->SiswaRecapt->jenis_kelamin }}</td>
+                                                <td class="px-6 py-4">{{ $rekap->tanggal }}</td>
+                                                <td class="px-6 py-4">{{ $rekap->keterangan }}</td>
+                                                <td class="px-6 py-4">{{ $rekap->alasan }}</td>
+                                            </tr>
+                                        @endforeach
                                     @endforeach
                                 </tbody>
                             </table>
