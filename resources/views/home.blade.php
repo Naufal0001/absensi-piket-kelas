@@ -33,7 +33,7 @@
                     <div class="flex">
                         <div class="flex flex-col gap-4 w-[100%]">
                             <span class="text-5xl text-white font-bold uppercase">
-                                Rabu
+                                {{ $shedulles->hari }}
                             </span>
                             <span class="text-2xl font-semibold text-white uppercase">
                                 Jadwal piket hari ini

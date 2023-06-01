@@ -12,8 +12,8 @@
                         data-tabs-toggle="#myTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
                             <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab"
-                                data-tabs-target="#profile" type="button" role="tab" aria-controls="profile"
-                                aria-selected="false">Data siswa</button>
+                            data-tabs-target="#profile" type="button" role="tab" aria-controls="profile"
+                            aria-selected="false">Data siswa</button>
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
@@ -64,6 +64,23 @@
                     </div>
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel">
                         <div class="relative overflow-x-auto shadow-md rounded-lg">
+                            <form action="">
+                                <div class="flex gap-4 mb-2">
+                                    <div class="form-control">
+                                        <select name="keterangan" id="">
+                                            <option {{ isset($_GET['keterangan']) && $_GET['keterangan'] == "Piket" ? "selected" : "" }} value="Piket">Piket</option>
+                                            <option {{ isset($_GET['keterangan']) && $_GET['keterangan'] == "Tidak Piket" ? "selected" : "" }} value="Tidak Piket">Tidak Piket</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-control">
+                                        <input type="date" value="{{ isset($_GET['tanggal']) ? $_GET['tanggal'] : "" }}" name="tanggal">
+                                    </div>
+                                    <div class="form-control">
+                                        <button class="bg-slate-800 py-2 px-6 rounded-md text-white">Terapkan</button>
+                                    </div>
+                                </div>
+                            </form>
+
                             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                 <thead class="text-white uppercase bg-blue-500">
                                     <tr>
@@ -77,8 +94,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="">
-                                    @foreach ($students as $student)
-                                        @foreach ($student->Recapt as $rekap)
+                                        @foreach ($rekaps as $rekap)
                                             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                                 <td class="px-6 py-4">{{ $loop->iteration }}</td>
                                                 <td class="px-6 py-4">{{ $rekap->SiswaRecapt->nis }}</td>
@@ -89,7 +105,6 @@
                                                 <td class="px-6 py-4">{{ $rekap->alasan }}</td>
                                             </tr>
                                         @endforeach
-                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

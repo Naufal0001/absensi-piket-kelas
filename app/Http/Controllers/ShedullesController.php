@@ -40,7 +40,8 @@ class ShedullesController extends Controller
                 break;
         }
         $data['shedulles'] = Jadwal::where("hari", $hari)->first();
-
+        $data['rekap'] = rekap::where('tanggal', date("Y-m-d"))->get();
+        // dd($data['rekap']);
         return view("form-absensi", $data);
     }
 
@@ -72,7 +73,7 @@ class ShedullesController extends Controller
             }
         });
 
-        return back();
+        return redirect('/data')->with('success', "Berhasil mengabsen siswa");
     }
 
     /**
