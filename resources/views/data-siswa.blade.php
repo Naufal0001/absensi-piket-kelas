@@ -77,18 +77,16 @@
                                     </tr>
                                 </thead>
                                 <tbody class="">
-                                    @foreach ($students as $student)
-                                        @foreach ($student->Recapt as $rekap)
+                                    @foreach ($rekaps as $rekap)
                                             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                                 <td class="px-6 py-4">{{ $loop->iteration }}</td>
-                                                <td class="px-6 py-4">{{ $rekap->SiswaRecapt->nis }}</td>
-                                                <td class="px-6 py-4">{{ $rekap->SiswaRecapt->nama }}</td>
-                                                <td class="px-6 py-4">{{ $rekap->SiswaRecapt->jenis_kelamin }}</td>
+                                                <td class="px-6 py-4">{{ $rekap->Siswa->nis }}</td>
+                                                <td class="px-6 py-4">{{ $rekap->Siswa->nama }}</td>
+                                                <td class="px-6 py-4">{{ $rekap->Siswa->jenis_kelamin }}</td>
                                                 <td class="px-6 py-4">{{ $rekap->tanggal }}</td>
                                                 <td class="px-6 py-4">{{ $rekap->keterangan }}</td>
                                                 <td class="px-6 py-4">{{ $rekap->alasan }}</td>
                                             </tr>
-                                        @endforeach
                                     @endforeach
                                 </tbody>
                             </table>

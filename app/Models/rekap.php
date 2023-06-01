@@ -10,7 +10,7 @@ class rekap extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function SiswaRecapt(){
+    public function Siswa(){
         return $this->belongsTo(Siswa::class, 'id_siswa');
     }
 }
