@@ -13,11 +13,14 @@
                         <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
                             <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Tambah Siswa</h2>
                             <div class="mb-6">
-                                <label for="id"
+                                <label for="id_jadwal"
                                     class="block mb-2 text-sm font-semibold text-gray-900 dark:text-white">Jadwal
                                     Piket</label>
-                                <input type="number" id="id" name="id_jadwal"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="id_jadwal" id="id_jadwal">
+                                        @foreach ($days as $day)
+                                        <option value="{{ $day->id }}">{{ $day->hari }}</option>
+                                        @endforeach
+                                    </select>
                             </div>
                             <div class="mb-6">
                                 <label for="nis"

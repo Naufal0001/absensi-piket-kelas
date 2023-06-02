@@ -18,24 +18,25 @@
                     </ul>
                 </div>
                 <div id="myTabContent">
-                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel"
+                    <div class="hidden p-10 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel"
                         aria-labelledby="profile-tab">
-                        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                <tbody class="">
-                                    @foreach ($shedulles as $shedulle)
-                                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                            <td class="text-center font-semibold border-0 text-white uppercase bg-blue-500">
-                                                {{ $shedulle->hari }}</td>
-                                            @foreach ($shedulle->Siswa as $students)
-                                                <td class="px-6 py-4">
-                                                    <div class="">{{ $students->nama }}</div>
-                                                </td>
-                                            @endforeach
-                                        </tr>
+                        <div class="grid grid-cols-2 gap-8">
+                            @foreach ($shedulles as $shedulle)
+                            <div class="flex border flex-col w-full rounded-lg shadow-md">
+                                <div class="bg-gray-200 border py-2 px-4 text-center rounded-t-lg">
+                                    <span class="font-semibold text-xl">
+                                        {{ $shedulle->hari }}
+                                    </span>
+                                </div>
+                                <div class="grid sm:grid-cols-3 grid-rows-1 w-full p-4 gap-4 mx-auto">
+                                    @foreach ($shedulle->Siswa as $students)
+                                    <div class="bg-gray-200 px-4 py-2 mx-auto rounded-lg">
+                                        <span class="">{{ $students->nama }}</span>
+                                    </div>
                                     @endforeach
-                                </tbody>
-                            </table>
+                                </div>
+                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

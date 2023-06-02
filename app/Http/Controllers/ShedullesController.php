@@ -12,10 +12,10 @@ class ShedullesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function checkDate($date){
-       
+    public function checkDate($date)
+    {
     }
- 
+
 
     public function index()
     {
@@ -35,12 +35,21 @@ class ShedullesController extends Controller
             case 'fri':
                 $hari = "Jumat";
                 break;
+            case 'sat':
+                $hari = "Sabtu";
+                break;
+            case 'sun':
+                $hari = "Minggu";
+                break;
             default:
                 $hari = null;
                 break;
         }
+        // !$hari ? $data['shedules'] = null : $data['shedules'] = Jadwal::where("hari", $hari)->first();
         $data['shedulles'] = Jadwal::where("hari", $hari)->first();
-
+        $data['hari'] = $hari;
+        $data['rekap'] = rekap::where('tanggal', date("Y-m-d"))->get();
+        // dd($data['rekap']);
         return view("form-absensi", $data);
     }
 
@@ -72,7 +81,7 @@ class ShedullesController extends Controller
             }
         });
 
-        return back();
+        return redirect('/data')->with('success', "Berhasil mengabsen siswa");
     }
 
     /**

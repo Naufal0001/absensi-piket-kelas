@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jadwal;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,10 @@ class SiswaController extends Controller
     public function index()
     {
         $data = Siswa::all();
-        return view('/form-siswa', compact('data'));
+        $days = Jadwal::all(); 
+        
+        
+        return view('/form-siswa', compact('data', 'days'));
     }
 
     /**
@@ -54,7 +58,8 @@ class SiswaController extends Controller
     public function edit(string $id)
     {
         $data = Siswa::findOrFail($id);
-        return view('edit', ['data' => $data]);
+        $days = Jadwal::all();
+        return view('edit', ['data' => $data, 'days' => $days]);
     }
 
     /**

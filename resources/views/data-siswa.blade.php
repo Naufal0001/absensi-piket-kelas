@@ -26,9 +26,25 @@
                 <div id="myTabContent">
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel"
                         aria-labelledby="profile-tab">
-
+                        <div class="flex mb-2">
+                            <label for="search-input2"
+                                    class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <input type="search" id="search-input2"
+                                        class="block w-full p-2.5 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Search" value="">
+                                </div>
+                        </div>
                         <div class="relative overflow-x-auto shadow-md rounded-lg">
-                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <table id="my-table2" class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                 <thead class="text-white uppercase bg-blue-500">
                                     <tr>
                                         <th scope="col" class="px-6 py-3">No</th>
@@ -63,8 +79,57 @@
 
                     </div>
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel">
+                        <form action="">
+                            <div class="flex gap-4 mb-2">
+                                <label for="search-input"
+                                    class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <input type="search" id="search-input"
+                                        class="block w-full p-2.5 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Search" value="">
+                                </div>
+                                <div class="relative">
+                                    <select
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        name="keterangan" id="">
+                                        <option
+                                            {{ isset($_GET['keterangan']) && $_GET['keterangan'] == 'Piket' ? 'selected' : '' }}
+                                            value="Piket">Piket</option>
+                                        <option
+                                            {{ isset($_GET['keterangan']) && $_GET['keterangan'] == 'Tidak Piket' ? 'selected' : '' }}
+                                            value="Tidak Piket">Tidak Piket</option>
+                                    </select>
+                                </div>
+                                <div class="relative max-w-sm">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                            fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <input datepicker datepicker-buttons datepicker-format="y-m-d" type="text"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Select date"
+                                        value="{{ isset($_GET['tanggal']) ? $_GET['tanggal'] : '' }}" name="tanggal">
+                                </div>
+                                <div class="relative">
+                                    <button class="bg-gray-500 hover:bg-gray-600 p-2.5 text-sm rounded-lg text-white w-full">Terapkan</button>
+                                </div>
+                            </div>
+                        </form>
                         <div class="relative overflow-x-auto shadow-md rounded-lg">
-                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+
+                            <table id="my-table" class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                 <thead class="text-white uppercase bg-blue-500">
                                     <tr>
                                         <th scope="col" class="px-6 py-3">No</th>
@@ -78,25 +143,22 @@
                                 </thead>
                                 <tbody class="">
                                     @foreach ($rekaps as $rekap)
-                                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                                <td class="px-6 py-4">{{ $loop->iteration }}</td>
-                                                <td class="px-6 py-4">{{ $rekap->Siswa->nis }}</td>
-                                                <td class="px-6 py-4">{{ $rekap->Siswa->nama }}</td>
-                                                <td class="px-6 py-4">{{ $rekap->Siswa->jenis_kelamin }}</td>
-                                                <td class="px-6 py-4">{{ $rekap->tanggal }}</td>
-                                                <td class="px-6 py-4">{{ $rekap->keterangan }}</td>
-                                                <td class="px-6 py-4">{{ $rekap->alasan }}</td>
-                                            </tr>
+                                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                                            <td class="px-6 py-4">{{ $loop->iteration }}</td>
+                                            <td class="px-6 py-4">{{ $rekap->Siswa->nis }}</td>
+                                            <td class="px-6 py-4">{{ $rekap->Siswa->nama }}</td>
+                                            <td class="px-6 py-4">{{ $rekap->Siswa->jenis_kelamin }}</td>
+                                            <td class="px-6 py-4">{{ $rekap->tanggal }}</td>
+                                            <td class="px-6 py-4">{{ $rekap->keterangan }}</td>
+                                            <td class="px-6 py-4">{{ $rekap->alasan }}</td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-    </div>
     </div>
 @endsection

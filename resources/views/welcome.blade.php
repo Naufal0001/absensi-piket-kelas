@@ -31,7 +31,7 @@
               <button
                 class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600 transition-colors"
                 type="submit">Log In</button>
-              <a class="text-sm text-blue-500 hover:text-blue-600" href="#">Forgot Password?</a>
+              <a class="hidden text-sm text-blue-500 hover:text-blue-600" href="#">Forgot Password?</a>
             </div>
           </form>
         </div>
